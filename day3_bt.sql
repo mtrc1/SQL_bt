@@ -21,3 +21,9 @@ And city not like "u%"
 And city not like "e%"
 And city not like "o%"
 __bt7
+select name  from employee order by name
+__bt8
+select name
+from employee 
+where salary >2000 and months <10
+__bt9
