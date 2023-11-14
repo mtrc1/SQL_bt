@@ -27,3 +27,25 @@ select name
 from employee 
 where salary >2000 and months <10
 __bt9
+select product_id from products
+where low_fats= "y" 
+and recyclable= "y"
+__bt10
+select name from customer
+where referee_id<> "2" or referee_id is null
+__bt11
+select name, population, area from world
+where area > 3000000 or population> 25000000
+order by name asc
+__bt12
+select distinct  author_id as id from views
+where author_id= viewer_id order by id
+__bt13
+SELECT DISTINCT part from parts_assembly
+WHERE finish_date is NULL
+__bt14
+select * from lyft_drivers
+where yearly_salary <= 30000 or yearly_salary>=70000
+__bt15
+select advertising_channel from uber_advertising
+where money_spent > 100000 and year = 2019
