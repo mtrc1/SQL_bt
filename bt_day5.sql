@@ -27,4 +27,26 @@ FROM monthly_cards_issued
 group by card_name
 order by difference desc;
 __bt8
-
+  SELECT manufacturer,COUNT(drug),SUM(cogs-total_sales) AS total_loss 
+FROM pharmacy_sales
+WHERE cogs>total_sales
+GROUP BY manufacturer
+ORDER BY total_loss DESC
+__bt9
+select *from cinema
+where id%2=1 and description<>'boring'
+order by rating desc
+__bt10
+SELECT   teacher_id, 
+ COUNT(DISTINCT subject_id) AS cnt
+FROM Teacher
+GROUP BY teacher_id
+__bt11
+select user_id , count(follower_id)as followers_count
+from Followers
+group by user_id
+order by user_id
+__bt12
+select class from courses
+group by class
+having count(student)>=5
