@@ -20,8 +20,8 @@ select name from customer
 where referee_id<> "2" or referee_id is null
 __ex5
 select survived,
-sum(case when pclass = 1 then 1 end) first_class,
-sum(case when pclass = 2 then 1 end) second_class,
-sum(case when pclass = 3 then 1 end) third_class
+count(case when pclass = 1 then 1 end) first_class,
+count(case when pclass = 2 then 1 end) second_class,
+count(case when pclass = 3 then 1 end) third_class
 from titanic
 group by survived
