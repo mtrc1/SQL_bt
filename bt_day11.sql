@@ -38,5 +38,19 @@ GROUP BY E.reports_to
 ORDER BY M.employee_id ASC
 
 __ex6
+select p.product_name, sum(o.unit) as unit
+from products p
+left join orders o
+on p.product_id = o.product_id
+where o.order_date between '2020-02-01' and '2020-02-29'
+group by o.product_id
+having unit >= 100
+order by o.product_id
 
+__ex7
+SELECT DISTINCT P.page_id
+FROM pages P LEFT JOIN page_likes L
+ON P.page_id = L.page_id
+WHERE L.liked_date IS NULL
+ORDER BY P.page_id ASC
 
