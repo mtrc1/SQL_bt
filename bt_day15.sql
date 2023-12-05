@@ -30,7 +30,7 @@ FROM user_transactions GROUP BY user_id)
 GROUP BY 2,1
 ORDER BY 1
 __ex5
-\select user_id,tweet_date,
+select user_id,tweet_date,
 ROUND(AVG(tweet_count)
 OVER(PARTITION BY user_id ORDER BY tweet_date 
 ROWS BETWEEN 2 PRECEDING AND CURRENT ROW), 2)
@@ -61,7 +61,6 @@ JOIN songs s on a.artist_id=s.artist_id
 JOIN global_song_rank gsr on gsr.song_id=s.song_id
 where gsr.rank<=10
 GROUP BY a.artist_name)
-
 SELECT * from cte
 where dense_rank<=5
 
